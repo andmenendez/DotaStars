@@ -1,0 +1,8 @@
+<div style="align-content: center; text-align: center;">
+  <div class="page_container">
+    <% @teams.order(:name).each do |team| %>
+      <%= render partial: 'team_block', locals: {team: team} %>
+    <% end %>
+  </div>
+</div>
+

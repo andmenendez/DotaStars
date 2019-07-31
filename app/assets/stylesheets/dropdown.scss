@@ -1,0 +1,102 @@
+$block-color: rgb(79, 91, 115);
+$border-color: rgb(230,230,230);
+$font-color: white;
+$hover-color: rgb(50,50,50);
+
+$match-border-color: rgba(0,0,0,0.4);
+$match-font-color: rgba(29, 41, 65, 0.9);
+$match-color1: rgba(250,250,250,0.9);
+$match-color2: rgba(250,250,250,0.5);
+
+$match-viewmore-color: rgb(74, 86, 110);
+$match-viewmore-hover-color: rgb(49, 61, 85);
+$match-viewmore-font-color: rgba(1,1,1,0.5);
+$match-viewmore-font-color-hover: rgba(255,255,255,0.9);
+$match-viewmore-pane-color: rgba(234, 246, 255,0.5);
+
+.event_pane_view_more_button {
+	
+	background-color: black;
+	font-size: 14px;
+	opacity: 0.05;
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.2;
+	}
+	
+	border-bottom: 1px solid $border-color;
+	a {
+		color: $match-font-color;
+		text-decoration: none;
+		// &:hover { 	
+		// 	color: $hover-color;
+		// }
+	}
+	transition: 0.1s;
+}
+
+.view_more_container {
+	z-index: 5;
+	margin-top: 15px;
+	a {
+		text-decoration: none;
+	}
+}
+.view_more_element {
+	border-bottom: 1px solid $match-border-color;
+	margin-top: 5px;
+	padding-left: 5px;
+	background-color: $match-color1;
+
+	// &:nth-child(even) {
+	// 	background-color: $match-color2;
+	// }
+	overflow: hidden;
+
+	display: grid;
+	// grid-template-columns: 550px 75px auto;
+	grid-template-columns: 65% 25% auto;
+	grid-template-rows: auto;
+	justify-items: stretch;
+
+	color: $match-font-color;
+	
+	a {
+		text-decoration: none;
+		color: $match-viewmore-font-color;
+	}
+
+	&:hover {
+		background-color: $match-viewmore-hover-color;
+		border-bottom: 1px solid $match-viewmore-hover-color;
+		opacity: 0.9;
+		color: $match-viewmore-font-color-hover; 
+	}
+
+}
+.event_text {
+	z-index: 1000;
+	background: transparent;
+	text-decoration: none;
+
+}
+.event_match {
+	text-align: left;
+	grid-column-start: 	1;
+	grid-column-end: 	2;
+	grid-row-start: 	1;
+	grid-row-end: 		2;
+}
+.event_date {
+	grid-column-start: 	2;
+	grid-column-end: 	3;
+	grid-row-start: 	1;
+	grid-row-end: 		2;
+}
+.event_time {
+	grid-column-start: 	3;
+	grid-column-end: 	4;
+	grid-row-start: 	1;
+	grid-row-end: 		2;
+}

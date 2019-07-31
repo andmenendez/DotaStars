@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  logo: MyString
+  p1: MyString
+  p2: MyString
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  match: one
+
+two:
+  name: MyString
+  logo: MyString
+  p1: MyString
+  p2: MyString
+  p3: MyString
+  p4: MyString
+  p5: MyString
+  match: two

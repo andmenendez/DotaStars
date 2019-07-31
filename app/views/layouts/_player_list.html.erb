@@ -1,0 +1,11 @@
+<div class="team_players">
+  <% team.players.slice(0,5).each do |player| %>
+    <div class="player_container">
+      <%=link_to player_path(player) do %>
+        <div class="team_player player_name">
+          <%= player.name %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

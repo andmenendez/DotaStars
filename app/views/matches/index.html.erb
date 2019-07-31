@@ -1,0 +1,28 @@
+<div class="match_container">
+  <span class="match_index">
+    <div class = "match_element header">
+      <div class="match_text match_index">                </div>
+      <div class="match_text event_date">Date             </div>
+      <div class="match_text event_time">Time             </div>
+      <div class="match_text match_radiant">Radiant Team  </div>
+      <div class="match_text" id="fill">vs                </div>
+      <div class="match_text match_dire">Dire Team        </div>
+      <div class="match_text event_title">Event           </div>
+    </div> 
+
+  <% @matches.order(:date_start).reverse_order.each.with_index do |match, index| %>
+    <%= link_to match_path(match) do %>
+      <div class = "match_element" id="match_formatting">
+          <div class="match_text match_index">  <%= index + 1           %></div>
+          <div class="match_text event_date">   <%= getMatchDate(match) %></div>
+          <div class="match_text event_time">   <%= getMatchTime(match) %></div>
+          <div class="match_text match_radiant"><%= getRadiant(match)   %></div>
+          <div class="match_text" id="fill">vs                            </div>
+          <div class="match_text match_dire">   <%= getDire(match)      %></div>
+          <div class="match_text event_title"> <%= match.event.title   %></div>
+      </div>
+    <% end %>
+  <% end %>
+</span>
+
+</div>

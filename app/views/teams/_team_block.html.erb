@@ -1,0 +1,32 @@
+<div class="team_container">
+  
+  <%= link_to team_path(team) do %>
+    <div class="team_link">
+      <div class="team_image">
+        <%= image_tag team.image.url %>
+      </div>
+      <div class="team_name"><%= team.name %></div>
+    </div>
+  <% end %>
+  
+  <div class="player_list">
+    <%= render partial: 'layouts/player_list', locals: {team: team} %>
+  </div>
+
+  <div class="view_more_container" id="team<%=team.id%>">
+    <% findMatches(team.id).slice(0,5).each do |match| %>
+      <%= link_to match_path(match) do %>
+        <div class="view_more_element">
+          <div class="team_match_text event_match"><%= getMatch(match) %></div>
+          <div class="team_match_text event_date"><%= getMatchDay(match) %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <div  class="event_pane_view_more_button" 
+        onclick="openTeamMatches(<%=team.id%>);">
+        View Upcoming Matches
+  </div>
+
+</div>

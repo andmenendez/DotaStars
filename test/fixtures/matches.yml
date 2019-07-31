@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  radiant: one
+  dire: one
+  date_start: 2019-07-17 18:57:21
+
+two:
+  radiant: two
+  dire: two
+  date_start: 2019-07-17 18:57:21

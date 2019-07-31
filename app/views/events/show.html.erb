@@ -1,0 +1,19 @@
+<div class="event_show_container">
+  <div class="event_show_title"><%= @event.title %></div>
+  <div class="evnet_show_desc"><%= @event.description %></div>
+
+  <div class="event_show_team_container">
+    <% @event.teams.each do |team| %>
+    <%= link_to team_path(team) do %>
+      <div class="event_show_team">
+        <div class="event_show_team_logo">
+          <%= image_tag team.image.url %>
+        </div>
+        <div class="event_show_team_title"><%= team.name %></div>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+  
+  <%= render :partial => 'layouts/match_list', locals: {param: @event} %>
+</div>

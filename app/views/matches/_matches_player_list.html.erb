@@ -1,0 +1,13 @@
+<div class="match_show_team_element">
+
+  <div class="team_name">
+    <%= link_to team.name, team_path(team) %>
+  </div>
+
+  <div class="team_side_<%=match_side%> team">
+    <%=match_side%>  
+  </div>
+
+  <%= render partial: 'layouts/player_list', locals: {team: team} %>
+
+</div>

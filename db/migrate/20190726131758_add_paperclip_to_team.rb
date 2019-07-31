@@ -1,0 +1,8 @@
+class AddPaperclipToTeam < ActiveRecord::Migration[5.2]
+  def change
+    add_column  :teams,  :image_file_name,     :string
+    add_column  :teams,  :image_content_type,  :string
+    add_column  :teams,  :image_file_size,     :integer
+    add_column  :teams,  :image_updated_at,    :datetime
+  end
+end

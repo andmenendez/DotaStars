@@ -1,0 +1,222 @@
+// Place all the styles related to the Teams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin unselectable {
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+$block-color: rgb(79, 91, 115);
+$border-color: rgb(230,230,230);
+$font-color: white;
+$hover-color: rgb(50,50,50);
+
+$match-border-color: rgba(0,0,0,0.4);
+$match-font-color: rgba(29, 41, 65, 0.9);
+$match-color1: rgba(250,250,250,0.9);
+$match-color2: rgba(250,250,250,0.5);
+
+$match-viewmore-color: rgb(74, 86, 110);
+$match-viewmore-hover-color: rgb(49, 61, 85);
+$match-viewmore-font-color: rgba(1,1,1,0.5);
+$match-viewmore-font-color-hover: rgba(255,255,255,0.9);
+$match-viewmore-pane-color: rgba(234, 246, 255,0.5);
+
+// $player-color: rgba(199, 201, 215, 1);
+
+$player-color-hover: rgba(255,255,255,0.9);
+$player-border-hover: rgba(49, 61, 85,0.5);
+$player-color-override:  rgba(211, 211, 235, 1);
+
+.page_container {
+	width: 80vw;
+	text-align: left;
+	display: inline-block;
+	text-align: center;
+	
+	.team_container {
+		background-color: $block-color;
+		border-radius: 8px;
+		margin: 15px 15px 15px 15px;
+		width: 275px;
+		height: 310px;
+		display: inline-block;
+		text-align: center;
+		align-content: center;
+		overflow: hidden;
+
+		a { 
+			text-decoration: none; 
+		}
+		.player_list {
+			.team_player {
+				color: $player-color-override;
+				font-size: 14px;
+				&:hover {
+					$player-color-hover: rgba(4, 16, 40,0.4);
+					background-color: $player-color-hover;
+					color:white;
+				}
+			}
+		}
+	}
+	.team_link {
+		font-size: 28px;
+		color: $font-color;
+
+		&:hover {
+			.team_image { 
+				border: 2px solid rgba(255,255,255,0.8);
+				// width: 121px;
+				// height: 121px;
+			background-color: $match-viewmore-hover-color;
+			}
+			text-decoration: underline;
+		}
+	}
+	.team_image {
+		display: inline-block;
+		width: 130px;
+		height: 130px;
+		background-color: white;
+		border-radius: 5px;
+		margin-top: 15px;
+		margin-bottom: 0px;
+
+		object-fit: scale-down;
+		overflow: hidden;
+		img {
+			object-fit: scale-down;
+			width: 100%;
+			height: 100%;
+		}
+		border: 2px solid rgba(0,0,0,0.8);
+	}
+	.team_name {
+		width: auto;
+		padding: 5px 5px 5px 5px;
+		margin-bottom: 5px;
+	}
+	.team_players {
+		padding: 5px 5px 15px 5px;
+	}
+	.event_pane_view_more_button {
+		color: $match-viewmore-font-color;
+		z-index: 1000;
+		transform: translateY(-125px);
+		height: 30px;
+		width: 275px;
+		z-index: 20;
+
+		position: absolute;
+		background-color: $match-viewmore-color;
+		opacity: 1;
+
+		&:hover {
+			background-color: $match-viewmore-hover-color;
+			color: $match-viewmore-font-color-hover;
+		}	
+
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+		padding-top: 8px;
+
+		@include unselectable;
+	}
+
+	.view_more_container {
+		display: hidden;
+		z-index: 10;
+		transition: 0.5s;
+		background-color: $block-color;
+		display: inline-block;
+		position: relative;
+		// border-radius: 15px;
+		color: white; @important
+		margin-left:  4px;//$match-viewmore-hover-color;
+	
+		height: 100px;
+		width: 250px;
+		// border: 1px solid red;
+	}
+	.team_match_text {
+		font-size: 14px;
+	}
+}
+// SHOW SHOW SHOW SHOW SHOW SHOW SHOW SHOW SHOW SHOW
+
+$team-show-c: rgba(49, 61, 85, 0.3);
+$team-clear: rgba(255,255,255,0);
+$event-show-block-color-hover: rgba(9, 21, 45,0.9);
+$event-show-font-color: rgba(9, 21, 45,0.9);
+$main-font-color: rgba(9, 21, 45, 0.9);
+
+.team_show_container {
+	h1 {
+		font-size: 42px;
+		margin: 15px 0 15px 0;
+		color: $main-font-color;
+	}
+	display: inline-block;
+	width: 99vw;
+	align-content: center;
+	text-align: center;
+
+	.image img {
+		object-fit: fill;
+		width: 150px;
+		height: 150px;
+	}
+	// color: $event-show-font-color;
+	.edit {		
+		margin: 5px 0 15px 0;
+		opacity: .5;
+		a {
+			font-size: 11px;
+			color: $block-color;
+			text-decoration: none;
+
+			&:hover { 
+				color: $main-font-color;
+			}
+		}
+	}
+	.team_container {
+		border-top: 3px solid $block-color;
+		border-bottom: 3px solid $block-color;
+	
+		padding: 5px 0px 5px 0px;
+		height: 150px;
+
+		display: inline-block;
+		align-content: center;
+		text-align: center;
+		width: 30%;
+	
+		.team_players {
+			// margin-bottom: 25px;
+		}
+		
+		.player_container {
+			padding: 5px 25% 0 25%;
+			display: inline-grid;
+			grid-template-columns: auto 15px auto;
+			grid-template-rows: 25px;
+		}
+
+		.position {
+			text-align: left;
+			width: 100%;
+			grid-column-start: 1;
+			grid-column-end: 2;
+		}
+		.name {
+			text-align: left;
+			width: 100%;
+			grid-column-start: 3;
+			grid-column-end: 4;
+		}
+	}
+}

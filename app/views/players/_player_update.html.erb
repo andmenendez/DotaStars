@@ -1,0 +1,14 @@
+<%= form_with model: player, url: "/players/#{player.id}", method: :patch do |f| %>
+    <%= f.label             "Player: " %>
+    <%= f.text_field        :name %>
+
+    <%= f.select :position,
+        [ 'P1', 
+          'P2', 
+          'P3', 
+          'P4', 
+          'P5',
+          'PM'] %>
+          
+    <%= f.submit "Update"%>
+<% end %>

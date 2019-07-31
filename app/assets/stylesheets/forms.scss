@@ -1,0 +1,155 @@
+$block-color: rgb(79, 91, 115);
+$border-color: rgb(230,230,230);
+$font-color: white;
+$hover-color: rgb(50,50,50);
+
+$match-border-color: rgba(0,0,0,0.4);
+$match-font-color: rgba(29, 41, 65, 0.9);
+$match-color1: rgba(250,250,250,0.9);
+$match-color2: rgba(250,250,250,0.5);
+
+$form-field-color: rgba(79, 91, 115, 0.2);
+$form-font-color: rgba(9, 21, 45,0.9);
+
+.form_container {
+	display: inline-block;
+	width: 99vw;
+	align-content: center;
+	text-align: center;
+
+	color: $form-font-color;
+
+	a {
+		text-decoration: none;
+		color: $form-font-color;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+.attach_img {
+	font-size: 12px;
+	padding-left: 40px;
+}
+.text_field {
+	width: 225px;
+	background-color: $form-field-color;
+}
+.text_area {
+	width: 250px;
+	height: 50px;
+	background-color: $form-field-color;
+}
+.text_area_time {
+	background-color: $form-field-color;
+}
+.align_pair_form {
+	display: flex;
+	flex-direction: right;
+	justify-content: center;
+}
+.form_date {
+	margin: 15px 0px 25px 0px;
+	width: 251px;
+	display: inline-flex;
+	flex-direction: row;
+}
+.form_date_start, .form_date_end {
+	width: 125px; 
+}
+.form_match {
+	display: inline-block;
+	text-align: center;
+}
+.form_team {
+	margin-left: 100px;
+	display: inline-block;
+	text-align: left;
+
+	height: 100px;
+	
+	align-content: center;
+	vertical-align: baseline;
+
+	.form_event { margin-bottom: 25px }
+	.form_event, .form_radiant, .form_dire {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-row: auto;
+	}
+	.form_radiant { margin-top: 25px; }
+
+	.f_c1 {
+		width: 75px;
+		grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	.f_c2 { 
+		width: 300px;
+		grid-column-start: 2; 
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		color: white;
+		opacity: 0.9;
+	}
+}
+.team_players_form {
+	width: 100%;
+	display: inline;
+	align-content: center;
+	text-align: center;
+	justify-content: center;
+	
+	a {
+		text-decoration: none;
+		display: inline;
+	}
+
+	.player_update {
+		display: inline-block;
+	}
+	.delete {
+		display: inline-block;
+		background-color: $block-color;
+		opacity: 0.5;
+		cursor:pointer;
+		width: 10px;
+		height: 10px;
+		border-radius: 5px;
+		// padding-top: 1px;
+		&:hover { opacity: 1; }
+		vertical-align: top;
+		justify-content: top;
+		color: white;
+		text-decoration: none;
+		font-size: 8px;
+	}
+}
+.f_selection {
+	width: 200px;
+	display: inline-block;
+	text-align: right;
+}
+.myButton {
+	background-color: $block-color;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:18px;
+	padding:15px 76px;
+	text-decoration:none;
+}
+.myButton:hover {
+	opacity: 0.9;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

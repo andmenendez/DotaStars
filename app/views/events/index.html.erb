@@ -1,0 +1,40 @@
+
+<div class="event_pane_container_index">
+  <% @events.order(:date_start).reverse_order.each do |event| %>
+    <div class="event_pane_index" id="event<%=event.id%>">
+      
+      <div class="event_pane_thumbnail_index">
+        <%= link_to image_tag(event.image.url(:medium)), event_path(event) %>  
+      </div>
+
+      <div class="event_pane_title_index">
+      	<%= link_to event.title, event_path(event) %>
+      </div>
+
+      <div class="event_pane_decription_index">
+      	<%= event.description %> <br/>
+      </div>
+
+      <div class="event_pane_time_index">
+      	<span id="month"> <%= getEventMonth(event) %> </span> <br/> 
+        <span id="day">   <%= getEventDay(event) %> </span>
+      </div>
+      
+      <div  class="event_pane_view_more_button" onclick="openEventMatches(<%=event.id%>);">
+      View Upcoming Matches</div>
+
+      <div class="view_more_container">
+        <% event.matches.order(:date_start).reverse_order.slice(0,3).each do |match| %>
+          <%= link_to match_path(match) do %>
+            <div class="view_more_element">
+              <div class="event_text event_match"><%= getMatch(match) %></div>
+              <div class="event_text event_date"><%= getMatchDate(match) %></div>
+              <div class="event_text event_time"><%= getMatchTime(match) %></div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

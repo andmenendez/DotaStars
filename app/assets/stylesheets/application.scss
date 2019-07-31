@@ -1,0 +1,145 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+	background-color: rgb(79, 91, 115);
+ */
+
+ $nav-block-color: rgb(49, 61, 85);//rgb(79, 91, 115);
+ $nav-block-color-faded-hover: rgb(179, 191, 215);//rgb(79, 91, 115);
+ $nav-block-color-faded: rgb(79, 91, 115);//rgb(79, 91, 115);
+ $hover-color: rgb(50,50,50);
+* {
+}
+* {
+    font-family: "Gill Sans";
+}
+.DotaStarsNavBar {
+	margin-bottom: 10px;
+	* {color: white;}
+	width: 80%;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 5px;
+	display: inline-block;
+
+	* {
+		vertical-align:middle;
+	}
+	a, u {
+		text-decoration: none;
+
+		&:hover {
+			color: rgb(215,215,255);
+		}
+	}
+
+	background-color: $nav-block-color;
+	border-bottom: 2px solid white;
+	border-bottom: 5px solid rgba(50,50,50,0.5);
+	.DotaStarsContainer {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: baseline;
+		justify-content: space-between;
+
+		.DotaStarsLogo {
+			height: 100%;
+			text-align: center;
+			display: inline-block;
+			font-size: 42px;	
+		}
+		.DotaStarsNav {
+			height: 100%;
+			text-align: left;
+			display: inline-block;
+			font-size: 24px;
+			font-style: none;
+
+			.Nav_Tab {
+				width: 100px;
+				border-radius: 5px;
+				text-align: center;
+				display: inline-block;
+				&:hover {
+					background-color: white;
+					a {color: $hover-color}
+				}
+				a:hover {
+					background-color: white;
+					color: $hover-color;
+				}
+				a:active {
+					background-color: white;	
+				}
+			}
+		}
+		.DotaStarsNavLogin {
+			height: 100%;
+			display: inline-block;	
+			text-decoration: line-through;	
+		}
+	}
+}
+.body_container {
+	width: 100%;
+	overflow: hidden;
+}
+// FOOTER // FOOTER // FOOTER // FOOTER // FOOTER // FOOTER
+.footer_container {
+	transition-delay: 0.1s;
+	transition: 1s;
+	transform: translateY(40px);
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	background-color: $nav-block-color;
+	left: 0;
+	bottom: 0;
+	display: inline flex;
+	color: white;
+	a {
+		color: white;
+		font-size: 14px;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.footer_tab {
+		position: fixed;
+		left: 45%;
+		background-color: $nav-block-color-faded;
+		width: 10%;
+		height: 11px;
+		transform: translateY(-13px);
+		border-top-right-radius: 15px;
+		border-top-left-radius: 15px;
+		&:hover {
+			background-color: $nav-block-color-faded-hover;
+			cursor: pointer;
+		}
+		
+	}
+	.link_to_container {
+		display: flex;
+		width: 100%;
+		margin-top: 8px;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+	}
+
+}

@@ -1,0 +1,26 @@
+<div class="team_show_container">
+  <h1><%= @team.name %></h1>
+  <div class="image"><%= image_tag @team.image.url %></div><br/>
+
+  <div class="team_container">
+    <div class="team_players">
+      <% @team.players.each do |player| %>
+
+        <%=link_to player_path(player) do %>
+
+          <div class="team_player">
+            <div class="player_container">
+              <div class="position"> <%=player.position%></div>
+              <div class="name">     <%=player.name%>    </div>
+            </div>
+          </div>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+<br/>
+  <div class="edit"><%= link_to "EDIT ROSTER", update_roster_teams_path(@team) %></div>
+  <br/><br/><br/><br/>
+  <%= render :partial => 'layouts/match_list', locals: {param: @team} %>
+</div>

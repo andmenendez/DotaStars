@@ -1,0 +1,26 @@
+<div class="form_container">
+  <h1>Update Roster</h1>
+
+  <div class="form_container">
+    <div class="team_players_form">
+
+      <% @team.players.order(:position).each do |player| %>
+        <div class="player_update">
+          <%= render partial: 'players/player_update', locals: {player: player}%>
+        </div>
+        <%= link_to player_path(player), method: :delete do %> 
+          <div class="delete" %>X</div><br/>
+        <% end %>
+      <% end %>
+
+    </div> <br/> 
+    <div>
+      <%= link_to "Add Player", create_standin_teams_path(@team) %>
+    </div>
+  </div>
+
+
+  <br/><br/><br/>
+
+  <%= link_to "<< Return", team_path(@team) %>
+</div>

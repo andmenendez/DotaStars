@@ -1,0 +1,14 @@
+<%= form_with model: player do |f| %>
+
+    <%= f.label             "Player: " %>
+    <%= f.text_field        :name %>
+
+    <%= f.select :position,
+        [ 'P1', 
+          'P2', 
+          'P3', 
+          'P4', 
+          'P5'] %>
+          
+    <%= f.submit "Update"%>
+<% end %>

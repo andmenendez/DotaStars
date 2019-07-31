@@ -1,0 +1,23 @@
+
+<%= form_with model: @team do |f| %>
+
+  <%= f.label             "Name: " %>
+  <%= f.text_field        :name, :class => "text_field"%>
+
+
+    <div>
+      <% if @team.image.exists? %>
+        <%= image_tag @team.image.url(:thumb) %>
+      <% end %>
+    </div>
+    <%= f.label :image, "Attach Team Logo" %><br/>
+    <div class="attach_img">
+      <%= f.file_field :image %>
+    </div>
+  </div>
+  <br/><br/><br/>
+  <div class="form_container">
+    <%= f.submit "Submit", :class => "myButton" %>
+  </div>
+
+<% end %>

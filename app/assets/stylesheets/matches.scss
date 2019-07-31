@@ -1,0 +1,137 @@
+// Place all the styles related to the Matches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$block-color: rgb(79, 91, 115);
+$border-color: rgb(230,230,230);
+$font-color: white;
+$hover-color: rgb(50,50,50);
+
+$match-border-color: rgba(0,0,0,0.4);
+$match-font-color: rgba(29, 41, 65, 0.9);
+$match-color1: white;
+$match-color2: rgba(79, 91, 115, 0.1);
+$match-color-header: white;
+$match-hover: rgba(49, 61, 85, 1);//rgba(79, 101, 150, 1);
+
+$container-font-color: rgba(9, 21, 45,0.9);
+$main-font-color: rgba(9, 21, 45,0.9);
+
+.match_index {
+	.match_element {
+	grid-template-columns: 5% 10% 10% 10% 20% 2% 20% 30%;
+
+		.event_title {
+			grid-column-start: 	8;
+			grid-column-end: 	9;
+			grid-row-start: 	1;
+			grid-row-end: 		2;
+		}
+	}
+}
+
+.match_show_container {
+
+	display: inline-block;
+	width: 99vw;
+	align-content: center;
+	text-align: center;
+	
+	.match_show_header{
+		text-align: center;
+		a { 
+			color: $container-font-color; 
+			text-decoration: none;
+			&:hover {text-decoration: underline;}
+		}
+		
+		.event_title {
+			font-size: 64px;
+			// font-weight: bold;
+		}
+		.event_image {
+			display: inline-block;
+			width: 500px;
+			height: 70px;
+			overflow: hidden;
+
+			img {
+				transform: translateY(-215px);
+			}
+			margin-bottom: 25px;
+
+		}
+	}
+	.match_show_teams_container {
+		justify-content: top;
+		text-align: center;
+
+		.vs {
+			color: $container-font-color; 
+			display: inline-block; 
+			font-size: 52px;
+			// margin: 0 5px 0px 5px;
+			transform: translateY(-34px);
+		}
+
+		.match_show_team_element {
+			display: inline-block; 
+			width: 30vw;
+			margin: 0px 5px 0px 5px;
+		
+			height: auto;
+
+			.team_name {
+				font-size: 42px;
+				font-weight: bold;
+				margin-bottom: 15px;
+				a { 
+					color: $container-font-color; 
+					text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			.team_side_Radiant {
+				$c: rgba(255,255,255,0);
+				$b: rgba(0,150,50,0.2);
+
+				background: rgb(255,255,255);
+				background: -webkit-linear-gradient(left, $c 0%, $b 50%, $c 100%);
+				background: -o-linear-gradient(left,      $c 0%, $b 50%, $c 100%);
+				background: linear-gradient(to right,     $c 0%, $b 50%, $c 100%);
+			}
+			.team_side_Dire {
+				$c: rgba(255,255,255,0);
+				$b: rgba(150,50,50,0.2);
+
+				background: rgb(255,255,255);
+				background: -webkit-linear-gradient(left, $c 0%, $b 50%, $c 100%);
+				background: -o-linear-gradient(left,      $c 0%, $b 50%, $c 100%);
+				background: linear-gradient(to right,     $c 0%, $b 50%, $c 100%);
+			}
+			.team {
+				font-size: 24px;
+				border-radius: 5px;
+				margin-bottom: 15px;
+			}
+			
+			.team_player {
+				display: inline-block;
+				width: 15vw;
+				border-left: 3px solid $match-border-color;
+				border-right: 3px solid $match-border-color;
+				border-radius: 5px;
+
+
+				&:hover { 
+					color: white; 
+					border-left: 3px solid rgba(0,0,0,.1);
+					border-right: 3px solid rgba(0,0,0,.1);
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,55 @@
+// const eventView = document.querySelectorAll(".event_pane_view_more_index")
+// eventView.forEach(event => {
+// 	event.addEventListener("onclick", openEventMatches(event.dataset.eventID));
+// 	console.log(event);
+// 	console.log(event.dataset.eventID);
+// })
+// event.setAttribute("style", "height: 200px");
+// .setAttribute("style", "height: 200px");
+function openFooterEdit()
+{
+	let tab = document.getElementById(`footer`);
+	console.log(tab.clientHeight);
+
+	switch(tab.clientHeight)
+	{
+		case 50: 
+			tab.setAttribute("style", "transform: translateY(0px); height: 49px;");
+			break;
+		default: 
+			tab.setAttribute("style", "transform: translateY(40px); height: 50px");
+			break;
+	}
+}
+
+function openEventMatches(eventID)
+{
+	let event = document.getElementById(`event${eventID}`);
+
+	switch(event.clientHeight)
+	{
+		case 135: 
+			event.setAttribute("style", "height: 190px");
+			break;
+		default: 
+			event.setAttribute("style", "height: 105px");
+			break;
+	}
+}
+
+function openTeamMatches(teamID)
+{
+	let team = document.getElementById(`team${teamID}`);
+	console.log(team.clientHeight);
+
+	switch(team.clientHeight)
+	{
+		case 100: 
+			team.setAttribute("style", "transform: translateY(-117px); height: 105px;");
+			break;
+		default: 
+			team.setAttribute("style", "height: 100px");
+			break;
+	}
+}
+
