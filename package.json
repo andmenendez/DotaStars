@@ -1,5 +1,9 @@
 {
   "name": "dotaStars_v1",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.38.0",
+    "webpack-dev-server": "^3.7.2"
+  }
 }
