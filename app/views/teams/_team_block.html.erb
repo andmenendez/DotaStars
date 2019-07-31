@@ -14,7 +14,7 @@
   </div>
 
   <div class="view_more_container" id="team<%=team.id%>">
-    <% findMatches(team.id).slice(0,5).each do |match| %>
+    <% findMatches(team.id).slice(0,3).each do |match| %>
       <%= link_to match_path(match) do %>
         <div class="view_more_element">
           <div class="team_match_text event_match"><%= getMatch(match) %></div>
