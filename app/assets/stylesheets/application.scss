@@ -118,6 +118,7 @@
 			text-decoration: underline;
 		}
 	}
+	border-top: 2px solid white;
 	.footer_tab {
 		position: fixed;
 		left: 45%;
@@ -127,11 +128,11 @@
 		transform: translateY(-13px);
 		border-top-right-radius: 15px;
 		border-top-left-radius: 15px;
+		border-bottom: 2px solid white;
 		&:hover {
 			background-color: $nav-block-color-faded-hover;
 			cursor: pointer;
-		}
-		
+		}	
 	}
 	.link_to_container {
 		display: flex;

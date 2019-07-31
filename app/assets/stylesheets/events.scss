@@ -154,10 +154,28 @@ $event-show-font-color: rgba(9, 21, 45,0.9);
 	.event_show_title {
 		font-size: 64px;
 	}
+	.event_show_image {	
+		object-fit: scale-down;
+		overflow: hidden;
+		img {
+			object-fit: cover;
+			width: 500px;
+			height: 75px;
+		}
+	}
 	.evnet_show_desc {
 		padding: 15px 20% 15px 20%;
-		font-size: 14px;
-		
+		font-size: 14px;	
+	}
+	.edit {
+		font-size: 11px;
+		a {
+			text-decoration: none;
+			color: $block-color;
+			&:hover {
+				color: $event-show-block-color;
+			}
+		}
 	}
 }
 .event_show_team_container {

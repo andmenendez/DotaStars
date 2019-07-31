@@ -41,6 +41,13 @@ class TeamsController < ApplicationController
     redirect_to update_roster_teams_path(@team)
   end
 
+  def destroy
+    @team = Team.find(params[:id])
+    @team.destroy
+    flash.notice = "Team Removed"
+    redirect_to teams_path
+  end
+
   private
     def team_params
       params.require(:team).permit(:name, :image)

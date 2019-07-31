@@ -20,7 +20,13 @@
     </div>
   </div>
 <br/>
-  <div class="edit"><%= link_to "EDIT ROSTER", update_roster_teams_path(@team) %></div>
+
+<div class="edit">
+  <%= link_to "EDIT ROSTER", update_roster_teams_path(@team) %> /
+  <%= link_to "DELETE TEAM", team_path(@team), method: :delete %>
+</div>
+
   <br/><br/><br/><br/>
+
   <%= render :partial => 'layouts/match_list', locals: {param: @team} %>
 </div>

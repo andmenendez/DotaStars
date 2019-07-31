@@ -1,6 +1,10 @@
 <div class="event_show_container">
   <div class="event_show_title"><%= @event.title %></div>
-  <div class="evnet_show_desc"><%= @event.description %></div>
+  <div class="event_show_image"><%= image_tag @event.image.url%></div>
+  <div class="event_show_desc"><%= @event.description %></div>
+  <div class="edit">
+    <%= link_to "DELETE EVENT", event_path(@event), method: :delete %>
+  </div>
 
   <div class="event_show_team_container">
     <% @event.teams.each do |team| %>
