@@ -13,10 +13,15 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
-    @team.save
-    create_scaffold_roster(@team)
     
-    redirect_to team_path(@team)
+    if @team.save
+      flash[:success] = "TEAM '#{@team.name}' CREATED"
+      create_scaffold_roster(@team)
+      redirect_to team_path(@team)
+    else
+      render 'new'
+    end
+
   end
 
   def update_roster
@@ -32,7 +37,8 @@ class TeamsController < ApplicationController
     @team.update(team_params)
 
 
-      flash.notice = "Team '#{@team.name}' Updated!"
+    flash[:success] = "TEAM '#{@team.name}' UPDATED"
+    redirect_to team_path(@team)
   end
   
   def create_standin
@@ -44,7 +50,7 @@ class TeamsController < ApplicationController
   def destroy
     @team = Team.find(params[:id])
     @team.destroy
-    flash.notice = "Team Removed"
+    flash[:alert] = "TEAM REMOVED"
     redirect_to teams_path
   end
 

@@ -44,7 +44,9 @@ $main-font-color: rgba(9, 21, 45,0.9);
 			text-decoration: none;
 			&:hover {text-decoration: underline;}
 		}
-		
+		.edit {
+			font-size: 11px;
+		}
 		.event_title {
 			font-size: 64px;
 			// font-weight: bold;

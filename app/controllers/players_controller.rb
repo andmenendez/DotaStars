@@ -14,7 +14,6 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(player_params)
-
     @player.save
   end
 
@@ -23,9 +22,8 @@ class PlayersController < ApplicationController
     @team = @player.team_id
     @player.destroy
 
-    flash.notice = "Player Removed"
+    flash[:alert] = "PLAYER REMOVED"
 
-    
     redirect_to edit_team_path(@team)
   end
   
@@ -34,8 +32,7 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
     @player.update(player_params)
 
-
-    flash.notice = "Player Updated"
+    flash[:success] = "ROSTER UPDATED"
 
   end
 

@@ -15,3 +15,12 @@
     </div>
   </div>
 </div>
+ 
+<div class="flash_container">
+  <% if flash[:success] %>
+    <div class="flash-success"><%= flash[:success] %></div>
+  <% end %>
+    <% if flash[:alert] %>
+    <div class="flash-danger"><%= flash[:alert] %></div>
+  <% end %>
+</div>

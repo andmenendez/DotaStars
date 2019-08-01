@@ -13,17 +13,31 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.save
 
-    # flash.notice = "Event '#{@event.title}' Created!"
+    if @event.save
+      flash[:success] = "EVENT '#{@event.title}' CREATED"
+      redirect_to event_path(@event)
+    else
+      render 'new'
+    end
+  end
 
-    redirect_to root_path
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+
+    flash[:success] = "EVENT '#{@event.title}' UPDATED"
+    redirect_to event_path(@event)
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    flash.notice = "Team Removed"
+    flash[:alert] = "EVENT DELETED"
     redirect_to events_path
   end
 

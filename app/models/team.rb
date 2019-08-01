@@ -12,6 +12,10 @@ class Team < ApplicationRecord
               "image/jpg", 
               "image/jpeg", 
               "image/png"]
+
+  validates :name, presence: true
+  validates :image, presence: true
+  
   def matches
     matches = self.radiant_match_ids << self.dire_match_ids
     Match.where(id: matches)

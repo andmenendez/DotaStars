@@ -3,4 +3,6 @@ class Match < ApplicationRecord
 	# 2 Teams
 	belongs_to :radiant, 	:class_name => 'Team', foreign_key: "radiant_id"
 	belongs_to :dire, 	  :class_name => 'Team', foreign_key: "dire_id"
+
+  validates :date_start, presence: true
 end

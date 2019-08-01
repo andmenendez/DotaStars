@@ -1,6 +1,14 @@
 <div class="match_show_container">
   <div class="match_show_header">
     <div class="event_title"><%=link_to @event.title, event_path(@event)%></div>
+
+    <div class="edit">
+      <%= link_to "EDIT MATCH", edit_match_path(@match) %> /
+      <%= link_to "DELETE MATCH", match_path(@match), method: :delete %>
+      <br/>
+      <br/>
+    </div>
+
     <div class="event_image">
       <%=image_tag @event.image.url(:large)%></div>
 
@@ -13,5 +21,6 @@
     <%= render partial: 'matches_player_list', locals: {
             :match_side => "Dire", :team => @dire } %>
   </div>
+
 
 </div>  

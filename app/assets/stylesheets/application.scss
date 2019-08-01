@@ -20,13 +20,12 @@
  $nav-block-color-faded-hover: rgb(179, 191, 215);//rgb(79, 91, 115);
  $nav-block-color-faded: rgb(79, 91, 115);//rgb(79, 91, 115);
  $hover-color: rgb(50,50,50);
-* {
-}
+
 * {
     font-family: "Gill Sans";
 }
 .DotaStarsNavBar {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	* {color: white;}
 	width: 80%;
 	padding-left: 10%;
@@ -99,8 +98,9 @@
 }
 // FOOTER // FOOTER // FOOTER // FOOTER // FOOTER // FOOTER
 .footer_container {
+  	z-index:9999;
 	transition-delay: 0.1s;
-	transition: 1s;
+	transition: .25s;
 	transform: translateY(40px);
 	height: 50px;
 	width: 100%;
@@ -120,27 +120,51 @@
 	}
 	border-top: 2px solid white;
 	.footer_tab {
+  		z-index:9999;
 		position: fixed;
 		left: 45%;
 		background-color: $nav-block-color-faded;
 		width: 10%;
-		height: 11px;
-		transform: translateY(-13px);
+		height: 12px;
+		transform: translateY(-16px);
 		border-top-right-radius: 15px;
 		border-top-left-radius: 15px;
-		border-bottom: 2px solid white;
+		border: 2px solid white;
+		border-top: 1px solid white;
+
 		&:hover {
 			background-color: $nav-block-color-faded-hover;
 			cursor: pointer;
 		}	
 	}
 	.link_to_container {
+  		z-index:9999;
 		display: flex;
 		width: 100%;
-		margin-top: 8px;
+		margin-top: 7px;
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
 	}
+}
+.flash_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
 
+	height: 20px;
+	width: 100%;
+	font-size: 16px;
+	color: $nav-block-color;
+	transform: translateY(-15px);
+	margin-bottom: -10px;
+	opacity: 0.5;
+
+	.flash-success {
+		background-color: rgba(0,255,0,0.2);
+	}
+	.flash-danger {
+		background-color: rgba(255,0,0,0.2);
+	}
 }

@@ -12,6 +12,11 @@ class Event < ApplicationRecord
               "image/jpeg", 
               "image/png"] 
 
+  validates :title, presence: true, length: { maximum: 50 }
+  validates :description, length: { maximum: 120}
+  validates :date_start, presence: true
+  validates :date_end, presence: true
+
   def teams
     teams_ol = []
     teams_ul = self.dire_ids + self.radiant_ids

@@ -1,4 +1,11 @@
-<%= form_with model: @event do |f| %>
+<%= form_with model: @event,  local: true do |f| %>
+  <div class="errors_container">
+    <% if @event.errors.any? %>
+      <% @event.errors.full_messages.each do |error| %>
+        <div class="error"><%= error %></div>
+      <% end %>
+    <% end %>
+  </div>
 
   <p>
     <%= f.label             :title %> <br/>
@@ -11,27 +18,31 @@
   </p>
 
 
-<div , class="attach_img">
-  <p>
-    <% if @event.image.exists? %>
-      <%= image_tag @event.image.url() %>
-    <% end %>    
-    <%= f.label :image, "Attach Event Logo"%>
-    <%= f.file_field :image %>
-  </p>
-</div>
+  <% if @event.image.exists? %>
+    <div class="edit_image">
+      <%= image_tag @event.image.url %>
+    </div><br/>
+  <% end %>
 
-<div class="form_date" >
-  <div class="form_date_start">
-      Start Date: <br/>
-      <%= f.date_field :date_start, :class => 'text_area_time' %>
+  <div class="attach_img">    
+    <%= f.label :image, "Attach Event Logo"%> | 
+    <%= f.file_field :image %>
   </div>
-  <div class="form_date_end">
-      End Date: <br/>
-      <%= f.date_field :date_end, :class => 'text_area_time' %>
+  <br/><br/>
+
+  <div class="form_date" >
+    <div class="form_date_start">
+        Start Date: <br/>
+        <%= f.date_field :date_start, :class => 'text_area_time' %>
+    </div>
+    <div class="form_date_end">
+        End Date: <br/>
+        <%= f.date_field :date_end, :class => 'text_area_time' %>
+    </div>
   </div>
-</div>
-<div>
-  <%= f.submit "Register Event", :class => 'myButton'%>
-</div>
+  <div>
+    <%= f.submit "Register Event", :class => 'myButton'%>
+  </div>
 <% end %>
+
+

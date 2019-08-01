@@ -1,4 +1,13 @@
-<%= form_with model: @match do |f| %>
+<%= form_with model: @match,  local: true do |f| %>
+
+    <div class="errors_container">
+      <% if @match.errors.any? %>
+        <% @match.errors.full_messages.each do |error| %>
+          <div class="error"><%= error %></div>
+        <% end %>
+      <% end %>
+    </div> <br/>
+
   <div class="form_match">
     <div class="form_team">
       <div class="form_event">

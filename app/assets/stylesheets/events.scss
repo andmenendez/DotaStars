@@ -168,8 +168,9 @@ $event-show-font-color: rgba(9, 21, 45,0.9);
 		font-size: 14px;	
 	}
 	.edit {
-		margin-top: 5px;	
 		font-size: 11px;
+		// margin-top: 5px;	
+		// font-size: 11px;
 		a {
 			text-decoration: none;
 			color: $block-color;
@@ -242,7 +243,20 @@ $event-show-font-color: rgba(9, 21, 45,0.9);
 		color: white;
 		text-shadow: -1px 1px rgba(0,0,0,.5);
 	}
+}
+.edit_image {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
 
+	width: 250px;
+	height: 250px;
+	display: inline;
+	overflow: hidden;
+	img {
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
 }
 
 

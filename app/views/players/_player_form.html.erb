@@ -1,4 +1,11 @@
 <%= form_with model: player do |f| %>
+  <div class="errors_container">
+    <% if @player.errors.any? %>
+      <% @player.errors.full_messages.each do |error| %>
+        <div class="error"><%= error %></div>
+      <% end %>
+    <% end %>
+  </div>
 
     <%= f.label             "Player: " %>
     <%= f.text_field        :name %>

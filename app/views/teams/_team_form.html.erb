@@ -1,22 +1,33 @@
-<%= form_with model: @team do |f| %>
+<div class="event_show_container">
+  <%= form_with model: @team,  local: true  do |f| %>
 
-  <%= f.label             "Name: " %>
-  <%= f.text_field        :name, :class => "text_field"%>
-
-
-
-      <% if @team.image.exists? %>
-        <%= image_tag @team.image.url(:thumb) %>
+  <div class="errors_container">
+    <% if @team.errors.any? %>
+      <% @team.errors.full_messages.each do |error| %>
+        <div class="error"><%= error %></div>
       <% end %>
-
-    <%= f.label :image, "Attach Team Logo" %><br/>
-
-      <%= f.file_field :image, :class => "attach_img"%>
-
-
-  <br/><br/><br/>
-  <div class="form_container">
-    <%= f.submit "Submit", :class => "myButton" %>
+    <% end %>
   </div>
+  
+    <p>
+      <%= f.label       "Name: " %>
+      <%= f.text_field  :name, :class => "text_field"%>
+    <p>
+    <% if @team.image.exists? %>
+      <div class="edit_image">
+        <%= image_tag @team.image.url %>
+      </div><br/>
+    <% end %>
 
-<% end %>
+    <div class="attach_img"> 
+      <%= f.label :image, "Attach Team Logo" %><br/>
+      <%= f.file_field :image, :class => "attach_img"%>
+    </div>
+    <br/><br/>
+    <br/><br/><br/>
+    <div class="form_container">
+      <%= f.submit "Submit", :class => "myButton" %>
+    </div>
+  <% end %>
+
+</div>

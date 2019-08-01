@@ -16,11 +16,34 @@ class MatchesController < ApplicationController
 
   def create
     @match = Match.new(match_params)
-    @match.save
 
-    # flash.notice = "Event '#{@event.title}' Created!"
+    if @match.save
+      flash[:success] = "MATCH CREATED"
+      redirect_to event_path(@match.event_id)
+    else
+      render 'new'
+    end
+  end
 
-    redirect_to event_path(@match.event_id)
+  def edit
+    @match = Match.find(params[:id])
+  end
+
+  def update
+    @match = Match.find(params[:id])
+    @match.update(match_params)
+
+    flash[:success] = "MATCH UPDATED"
+
+    redirect_to match_path(@match)
+  end
+
+  def destroy
+    @match = Match.find(params[:id])
+    @event = @match.event_id
+    @match.destroy
+    flash[:alert] = "MATCH DELETED"
+    redirect_to event_path(@event)
   end
 
   def getDire
